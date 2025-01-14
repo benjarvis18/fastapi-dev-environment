@@ -1,0 +1,25 @@
+{
+	"name": "python-uv",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"charliermarsh.ruff",
+				"kevinrose.vsc-python-indent",
+				"ms-python.python",
+				"ms-python.mypy-type-checker"
+			]	
+		}		
+	},
+	"postStartCommand": "uv sync",
+	"containerEnv": {
+		"DISPLAY": "dummy",
+		"PYTHONUNBUFFERED": "True",
+		"UV_LINK_MODE": "copy",
+		"UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
+	},
+	"remoteUser": "vscode"
+}
