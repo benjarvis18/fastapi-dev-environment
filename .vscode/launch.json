@@ -8,7 +8,7 @@
             "name": "Python Debugger: FastAPI",
             "type": "debugpy",
             "request": "launch",
-            "module": "src",
+            "module": "app",
             "console": "internalConsole",
             "justMyCode": true
         }
