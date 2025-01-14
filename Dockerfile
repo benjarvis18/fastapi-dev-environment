@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12-slim
 
 ENV PYTHONUNBUFFERED=1
 
@@ -36,7 +36,7 @@ COPY ./app /app/app
 # Sync the project
 # Ref: https://docs.astral.sh/uv/guides/integration/docker/#intermediate-layers
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync
+    uv sync --frozen
 
 EXPOSE 8000
 
