@@ -13,8 +13,12 @@
 				"ms-python.mypy-type-checker"
 			],
 			"settings": {
-				"editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Courier New', monospace"
-			}
+				"editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Courier New', monospace",
+				"terminal.integrated.fontFamily": "'CaskaydiaCove NF', Consolas, 'Courier New', monospace",
+				"dotfiles.repository": "benjarvis18/dotfiles",
+				"dotfiles.targetPath": "~/dotfiles",
+				"dotfiles.installCommand": "install.sh"
+			}			
 		}		
 	},
 	"postStartCommand": "uv sync",
