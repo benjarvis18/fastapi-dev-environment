@@ -11,7 +11,10 @@
 				"kevinrose.vsc-python-indent",
 				"ms-python.python",
 				"ms-python.mypy-type-checker"
-			]	
+			],
+			"settings": {
+				"editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Courier New', monospace"
+			}
 		}		
 	},
 	"postStartCommand": "uv sync",
