@@ -1,6 +1,8 @@
-from typing import Annotated, Any, Union
+"""Contains the FastAPI application and its endpoints."""
 
-from fastapi import Depends, FastAPI
+from typing import Any
+
+from fastapi import FastAPI
 
 from . import auth, config
 
@@ -18,12 +20,14 @@ app = FastAPI(**app_config)
 
 @app.get("/")
 def read_root(
-    settings: Annotated[config.Settings, Depends(config.get_settings)],
-    api_key: Annotated[str, Depends(auth.get_api_key)],
+    settings: config.SettingsDependency,
+    _: auth.AuthDependency,
 ) -> dict[str, str]:
+    """Root endpoint that returns a greeting message."""
     return {"Hello": "World from " + settings.app_name}
 
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None) -> dict[str, Any]:
-    return {"item_id": item_id, "q": q}
+def read_item(item_id: int) -> dict[str, Any]:
+    """Endpoint to read an item by its ID."""
+    return {"item_id": item_id}

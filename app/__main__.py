@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+"""Runs the Uvicorn server for the FastAPI application."""
+
 import uvicorn
 
 if __name__ == "__main__":
