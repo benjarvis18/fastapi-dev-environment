@@ -404,3 +404,6 @@ FodyWeavers.xsd
 
 # Ruff cache
 .ruff-cache/
+
+# Secrets folder
+secrets/
