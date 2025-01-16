@@ -28,6 +28,9 @@ def read_root(
 
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int) -> dict[str, Any]:
+def read_item(
+    item_id: int,
+    _: auth.AuthDependency,
+) -> dict[str, Any]:
     """Endpoint to read an item by its ID."""
     return {"item_id": item_id}
