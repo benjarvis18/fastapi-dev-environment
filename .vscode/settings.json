@@ -9,5 +9,6 @@
         "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
     },
     "python.defaultInterpreterPath": "~/.venv/bin/python",
-    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace"
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'Cascadia Code NF', Consolas, 'Courier New', monospace"
 }
