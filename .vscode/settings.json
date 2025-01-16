@@ -5,7 +5,9 @@
             "source.fixAll": "explicit",
             "source.organizeImports": "explicit"
         },
-        "editor.defaultFormatter": "charliermarsh.ruff"
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
     },
-    "python.defaultInterpreterPath": "~/.venv/bin/python"
+    "python.defaultInterpreterPath": "~/.venv/bin/python",
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace"
 }
