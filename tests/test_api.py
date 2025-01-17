@@ -41,3 +41,45 @@ def test_read_item() -> None:
     )
     assert response.status_code == OK_STATUS_CODE
     assert response.json() == {"item_id": item_id}
+
+
+def test_list_items_no_token() -> None:
+    """Test the list items endpoint without an access token."""
+    response = client.get("/items")
+    assert response.status_code == FORBIDDEN_STATUS_CODE
+
+
+def test_list_items() -> None:
+    """Test the list items endpoint with an access token."""
+    response = client.get(
+        "/items",
+        params={"access_token": config.get_settings().api_key},
+    )
+    assert response.status_code == OK_STATUS_CODE
+    assert response.json() == [
+        {"item_id": 1, "name": "Item 1"},
+        {"item_id": 2, "name": "Item 2"},
+        {"item_id": 3, "name": "Item 3"},
+    ]
+
+
+def test_create_item_no_token() -> None:
+    """Test the create item endpoint without an access token."""
+    response = client.post(
+        "/items",
+        json={"name": "Test Item"},
+    )
+    assert response.status_code == FORBIDDEN_STATUS_CODE
+
+
+def test_create_item() -> None:
+    """Test the create item endpoint with an access token."""
+    test_item = {"name": "Test Item"}
+    response = client.post(
+        "/items",
+        params={"access_token": config.get_settings().api_key},
+        json=test_item,
+    )
+    assert response.status_code == OK_STATUS_CODE
+    assert response.json()["name"] == test_item["name"]
+    assert "item_id" in response.json()
